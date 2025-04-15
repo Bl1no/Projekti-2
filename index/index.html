@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agjensia e Fluturimeve</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Kreu</a></li>
+                <li><a href="sherbimet.html">Shërbimet</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Mirësevini në Agjensinë e Fluturimeve</h1>
+        <p>Shërbime fluturimi të shpejta dhe të sigurta për destinacione të ndryshme.</p>
+        <button id="bookFlightBtn">Rezervo një Fluturim</button>
+    </section>
+
+    
+
+    <section id="reservationForm" class="reservation-form" style="display: none;">
+        <h2>Forma për Rezervim Fluturimi</h2>
+        <form id="flightReservationForm">
+            <label for="fullName">Emri dhe Mbiemri:</label>
+            <input type="text" id="fullName" name="fullName" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="departure">Destinacioni:</label>
+            <input type="text" id="departure" name="departure" required>
+    
+            <label for="date">Data e Fluturimit:</label>
+            <input type="date" id="date" name="date" required>
+    
+            <button type="submit">Dërgo Rezervimin</button>
+            <button type="button" id="cancelBtn">Anulo</button>
+        </form>
+    </section>
+
+    <section id="flightAgencies">
+        <h2>Agjencitë e Fluturimeve me të cilat operojmë</h2>
+        <ul>
+            <li><a href="https://www.facebook.com/TAPAirPortugal" target="_blank">TAP Air Portugal</a></li>
+            <li><a href="https://www.facebook.com/jet2com" target="_blank">Jet2.com</a></li>
+            <li><a href="https://www.facebook.com/Ryanair" target="_blank">Ryanair</a></li>
+            <li><a href="https://www.facebook.com/WizzAir" target="_blank">Wizz Air</a></li>
+        </ul>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Agjensia e Fluturimeve. Të drejtat e rezervuara.</p>
+    </footer>
+    <script>
+document.getElementById('bookFlightBtn').addEventListener('click', () => {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('reservationForm').style.display = 'block';
+});
+document.getElementById('cancelBtn').addEventListener('click', () => {
+    document.getElementById('reservationForm').style.display = 'none';
+    document.getElementById('home').style.display = 'block';
+});
+    document.getElementById("flightReservationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        alert("Rezervimi u krye me sukses!");
+    });
+    document.getElementById("cancelBtn").addEventListener("click", function() {
+        document.getElementById("flightReservationForm").reset(); 
+        alert("Rezervimi u anulua!");
+    });
+    </script>
+</body>
+</html>
